@@ -11,7 +11,7 @@ so I decided to write one myself.
 And, when something needs visualization, Typst is the first that comes to my head.
 And here we are... 
 
-Huge thanks goes out to @sitandr , who helped very much with the layout look and performance!
+Huge thanks goes out to [@sitandr](https://github.com/sitandr), who helped very much with the layout look and performance!
 
 ### OK, show me
 
