@@ -32,7 +32,7 @@ and changes to accepting state if `Even`, or to rejecting state if `Odd`.
 
 And here's the visualization, with `000` given as input:
 
-<img src="zero.png" width="300" />
+<img src="./examples/zero.png" width="300" />
 
 ### How do I use it?
 
