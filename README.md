@@ -19,7 +19,6 @@ You're welcome! Here's a simple program that accepts an even number of zeroes, a
 
 ```
 Start 0 -> Even 0 ^
-Start 1 -> Even 1 ^
 Even _ -> Accept _ ^
 Even 0 -> Odd _ >
 Odd 0 -> Even _ >
@@ -48,7 +47,7 @@ The rules should be something that `parse-code` returns.
 You can also specify custom starting, accepting and rejecting state names. 
 Returns the pair of the `data` and the ending state. 
 The ending state is `none` if the machine broke, or the last state machine was in, otherwise. 
-Note that if machine broke, there is still data about its evaulation
+Note that if machine broke, there is still data about its evaluation
 
 + `trace` &mdash; displays the evaluation process. Accepts the data received from `run`, and the last state.
 
@@ -58,7 +57,7 @@ see `postfixlogic` for the syntax and the logic behind using it.
 So, regularly the usage is as follows:
 
 ```typ
-#let rules = parse-code(read("postfixlogic.out"))
+#let rules = parse-code(read("postfixlogic.tm"))
 
 #let initial-state = (to-arr("01|0&1|"), to-arr("_"))
 
@@ -71,7 +70,7 @@ So, regularly the usage is as follows:
 
 ### What are those other files? 
 
-They are examples of code (`.out` files) and its evaulation on sample inputs (`.pdf` files).
+They are examples of code (`.tm` files) and its evaulation on sample inputs (`.pdf` files).
 
 Unless otherwise stated, all the numbers are in binary format.
 
@@ -86,7 +85,7 @@ Checks if the input contains only parentheses which are correctly matched. For e
 + `convertto2`
 
 Converts a number from a ternary form to a binary form. 
-For example, it turns `102` (ternary for 11) into `1011`.
+For example, it turns `102` (ternary for eleven) into `1011`.
 
 + `less`
 

@@ -1,5 +1,4 @@
 Start 0 -> Even 0 ^
-Start 1 -> Even 1 ^
 Even _ -> Accept _ ^
 Even 0 -> Odd _ >
 Odd 0 -> Even _ >
