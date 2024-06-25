@@ -132,7 +132,7 @@
   return (data, state)
 }
 
-#let trace(data, endstate, accepting: "Accept", rejecting: "Reject",) = {
+#let trace(data, endstate, accepting: "Accept", rejecting: "Reject", break-every:20) = {
   let maxshift = calc.max(..data.map(it => calc.max(..it.shifts)))
   let maxlen = calc.max(
     ..data.map(
@@ -144,12 +144,17 @@
     ),
   )
 
+  let ind = 0
   for datum in data {
     line(length: (maxlen + maxshift) * 1cm, stroke:(paint:gray, dash:"dashed"))
     pad(left: maxshift * 1cm, display-tape(datum))
+    ind += 1
+    if calc.rem(ind, break-every) == 0 {
+      pagebreak()
+    }
   }
 
-  if endstate == accepting [
+  let res = if endstate == accepting [
     ACCEPTED
   ] else if endstate == rejecting [
     REJECTED
@@ -158,4 +163,6 @@
   ] else [
     TIME LIMIT EXCEEDED
   ]
+
+  move(dy:-1em,res)
 }

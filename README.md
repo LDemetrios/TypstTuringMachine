@@ -49,7 +49,7 @@ Returns the pair of the `data` and the ending state.
 The ending state is `none` if the machine broke, or the last state machine was in, otherwise. 
 Note that if machine broke, there is still data about its evaluation
 
-+ `trace` &mdash; displays the evaluation process. Accepts the data received from `run`, and the last state.
++ `trace` &mdash; displays the evaluation process. Accepts the data received from `run`, and the last state. You can also specify the `break-every` parameter to insert a pagebreak after each couple of state changes.
 
 All the above also support multi-taped Turing Machines, 
 see `postfixlogic` for the syntax and the logic behind using it.
@@ -63,7 +63,7 @@ So, regularly the usage is as follows:
 
 #let (data, endstate) = run(initial-state, rules, lim-steps: 1000)
 
-#trace(data, endstate)
+#trace(data, endstate, break-every: 10)
 ```
 
 `to-arr` is a util function which turns a string into array of chars.

@@ -1,6 +1,6 @@
 #import "../turing.typ": *
 
-#set page(fill: black, height: auto, width: auto)
+#set page(fill: black, height: auto, width: auto, margin: (y:0cm))
 #set text(fill: white)
 
 #let source = sys.inputs.at("source", default: "./zero.tm")
@@ -26,4 +26,4 @@
 
 #let (data, endstate) = run(initial-state, rules, lim-steps: 1000)
 
-#trace(data, endstate)
+#trace(data, endstate, break-every: 8)
